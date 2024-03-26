@@ -1,0 +1,39 @@
+.Main-title{
+    color: rgb(134, 20, 240);
+    text-align: center;
+    font-size: 3em;
+}
+.tagline{
+    color: rgba(157, 92, 236, 0.823);
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+}
+.title_1{
+ background-color: lightskyblue;
+ padding: 15px;
+ margin: 20px;
+ border-radius: 10px
+}
+
+.title_2{
+background-color: lightskyblue;
+padding: 15px;
+margin: 20px;
+border-radius: 10px
+}
+
+.title_3{
+background-color: lightskyblue;
+padding: 15px;
+margin: 20px;
+border-radius: 10px
+}
+.contact{
+    background-color: pink;
+    color: brown;
+}
+.info{
+color: rgb(12, 19, 2);
+background-color: greenyellow;
+}
