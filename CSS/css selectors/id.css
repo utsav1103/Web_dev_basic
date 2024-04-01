@@ -1,0 +1,42 @@
+#header{
+    background-color: rgb(108, 181, 245);
+    padding: 15px;
+    text-align: center;
+    color: aliceblue;
+}
+#name {
+    font-size: 2.5em;
+}
+#about{
+    background-color:rgb(58, 223, 241) ;
+    padding: 20px;
+    margin: 15px;
+}
+#about-title{
+ color: grey;
+ font-size: 2 em;
+}
+#about-description{
+ color: grey;
+ font-size: 1.2em;
+}
+#projects{
+ background-color: aliceblue;
+ padding: 20px;
+ margin: 15px;
+}
+
+#project1, #project2{
+    color: 27ae60;
+    font-size: 1.2em;
+    margin-left: 15px;
+}
+#footer{
+    background-color: #aab7b8;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+#contact{
+    font-size: 1.2em;
+}
