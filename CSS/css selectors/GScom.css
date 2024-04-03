@@ -1,0 +1,51 @@
+body{
+    background-color: blanchedalmond;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#recipes{
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    background: rgb(251, 221, 175);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+}
+
+.recipe{
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(238, 200, 143);
+}
+
+.recipe h2{
+    font-size: 1.8em;
+    color: rgb(42, 41, 41);
+    margin-bottom: 15px;
+}
+
+.ingredients{
+    background-color: bisque;
+ padding: 10px;
+ border-radius: 5px;
+}
+.tips{
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.steps{
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* general sibling combinator */
+
+.ingredients ~ .tips{
+    background-color: bisque;
+    font-style: italic;
+    border: 2px dashed black;
+}
