@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9f9;
+}
+#faq{
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: bisque;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px grey;
+}
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    padding: 20px;
+    border-bottom: 1px solid rgb(236, 170, 79);
+}
+
+h2 {
+    font-size: 15px;
+    margin-bottom:  10px;
+}
+p {
+    margin: 0;
+}
+
+li:first-child{
+    border-top: 4px solid burlywood;
+    background-color: rgb(220, 202, 170);
+}
+
+li:last-child{
+    border-top: 4px solid burlywood;
+    background-color: rgb(220, 218, 170);
+}
+li:nth-child(odd){
+    border-top: 4px solid burlywood;
+    background-color: rgb(220, 202, 170);
+}
+li:nth-child(even){
+    border-top: 4px solid burlywood;
+    background-color: rgb(220, 202, 170);
+}
