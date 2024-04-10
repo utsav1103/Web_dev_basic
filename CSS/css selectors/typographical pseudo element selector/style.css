@@ -1,0 +1,41 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fafafa67;
+    margin: 0;
+}
+#container{
+    width: 100%;
+}
+
+.headline{
+    font-size: 2.5em;
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.side-content{
+    float: right;
+    width: 30%;
+    background-color: bisque;
+    padding: 10px;
+}
+#coffee-article{
+    width: 68%;
+    padding: 1%;
+}
+/*typographical elements*/
+.headline::first-letter{
+    color: rgb(161, 109, 31);
+    font-size: 3em;
+}
+.intro::first-letter{
+    font-weight: bold;
+    background-color: beige;
+    font-size: 2em;
+    padding: 5px;
+}
+.content::first-line{
+    background-color: cornflowerblue;
+}
+
