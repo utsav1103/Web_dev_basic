@@ -1,0 +1,39 @@
+/*flexbox container */
+/* .container{
+    background-color: rgb(237, 184, 115);
+    display: flex;
+    height: 700px;
+    flex-direction: row;
+    justify-content: center;
+     flex-direction: row;
+    justify-content: flex-start;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: flex-end;
+    
+    flex-wrap: nowrap;
+    align-items: center;
+} */
+.container{
+    background-color: rgb(237, 184, 115);
+    display: flex;
+    height: 700px;
+    flex-direction: column ;
+    justify-content: center;
+    
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.item:nth-child(odd){
+    background-color: rgb(237, 115, 115);
+}
+.item:nth-child(even){
+    background-color: rgb(179, 127, 227);
+}
