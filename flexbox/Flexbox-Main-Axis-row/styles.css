@@ -1,0 +1,28 @@
+/* flrxbox */
+
+.container{
+    background-color: aqua;
+    display: flex;
+    /*flex-direction: row;*/
+    flex-direction: column;
+}
+
+
+
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 24px;
+    margin: 5px;
+}
+/* different colors for demonstration */
+
+.item:nth-child(odd){
+    background-color: lightsalmon;
+} 
+.item:nth-child(even){
+    background-color: palegreen;
+}
