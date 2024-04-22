@@ -1,0 +1,41 @@
+
+*{
+    margin: 4px;
+    padding: 10px;
+}
+/* DEFAULT STYLES FOR LARGE DESKTOPS */
+
+.header{
+    background-color: lightcoral;
+    font-size: 30px;
+    height: 100px;
+    color: whitesmoke;
+    padding: 40px;
+}
+/* small desktops width upto 1439px */
+
+@media(max-width: 1439px){
+    .header{
+        background-color: orange;
+    }
+}
+
+/* tablets screen widths up to 1279px */
+
+@media (max-width: 1279px) {
+    .header{
+        background-color: greenyellow;
+        color: black;
+        padding: 10px;
+    }
+}
+
+
+/* larger phones screen widths up to 767px */
+
+@media (max-width: 767px) {
+    .header{
+        background-color: rgb(209, 93, 232);
+        padding: 20px;
+    }
+}
