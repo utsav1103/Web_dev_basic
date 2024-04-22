@@ -1,0 +1,50 @@
+/* default styles for mobiel */
+
+.header {
+    background-color: rgb(228, 180, 118);
+    height: 100vh;
+}
+p{
+    color: rgb(202, 176, 227);
+    font-size: 3rem;
+}
+/* larger phones */
+
+@media(min-width:375px){
+    .header{
+        background-color: aqua;
+    }
+    p{
+        color: rgb(239, 235, 243);
+        font-size: 5rem;
+    }
+}
+/* tablets */
+@media(min-width:768px){
+    .header{
+        background-color: rgb(150, 233, 79);
+    }
+    p{
+        color: rgb(55, 23, 87);
+        font-size: 5rem;
+    }
+}
+
+/* small desktops*/
+@media(min-width:1280px){
+    .header{
+        background-color: rgb(147, 81, 224);
+    }
+}
+/* large desktops*/
+@media(min-width:1440px){
+    .header{
+        background-color: rgb(223, 93, 57);
+    }
+    p{
+        color: rgb(42, 159, 218);
+        font-size: 5rem;
+    }
+}
+
+/* */
