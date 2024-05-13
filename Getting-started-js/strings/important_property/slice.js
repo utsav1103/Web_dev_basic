@@ -43,9 +43,9 @@ const index1 = senten.indexOf("w");
 
 //----using string .trim property
 
-// const sentences = '  arigato@gmail.com   '
-// const email = sentences.trim()
+const sentences = '  arigato@gmail.com   '
+const email = sentences.trim()
 
-// // removing line break
-// const input = '\n\t Hello, world';
-// const output = input.trim()
+// removing line break
+const input = '\n\t Hello, world';
+const output = input.trim()
