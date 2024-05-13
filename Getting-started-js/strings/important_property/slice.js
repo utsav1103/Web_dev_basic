@@ -49,3 +49,15 @@ const email = sentences.trim()
 // removing line break
 const input = '\n\t Hello, world';
 const output = input.trim()
+
+//--- using replace method
+
+//basic usage 
+
+const text2 = 'This is an old Text.';
+const update = text2.replace('old','new');
+
+
+// repeted
+const text3 = 'old text with old words';
+const updated = text3.replace(/old/g,'new');
