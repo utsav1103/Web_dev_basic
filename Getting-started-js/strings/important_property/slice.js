@@ -10,3 +10,28 @@ const result = text.slice(7);
 const text1 = 'Hello darlin';
 const endText = text1.slice(-6);
 console.log(endText);
+
+
+// using string split method
+
+//simple split
+
+const sentence = 'Hello, Nejuko';
+const words = sentence.split(' ');
+console.log(words);
+
+//limit number split
+
+const myText = "apple , banana, pear";
+const mimit = myText.split(',',2)
+
+// split by multiple characters
+
+const complex = "apple:banna;you"
+const fruits = complex.split(/[:;]/);
+
+// split into characters
+
+const wor = 'MyDarlin';
+const vor = wor.split("");
+
