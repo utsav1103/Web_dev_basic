@@ -75,3 +75,38 @@ const expo = num ** 2 //10*10
 
 
 
+
+//====
+
+// using parseint () method again
+
+//====
+
+const userInput = '53'
+const userAge = parseInt(userInput, 10)
+
+
+const priceText = "price: 100 USD"
+
+const extract = parseInt(priceText.replace("price:","").replace("USD",""), 10)
+
+//====
+
+// using parseFloat () method again
+
+//====
+
+const check = "99.99";
+
+const price1 = parseFloat(check.replace("$",""))
+
+const tem = "temperature: 42.5c";
+const actualtem = parseFloat(tem.replace("temperature:","").replace("c",""))
+
+console.log(actualtem);
+
+
+
+
+
+
