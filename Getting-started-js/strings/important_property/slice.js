@@ -114,7 +114,7 @@ const strNum1 = num1.toString()
 
 //bool
 
-const boolval = false;
+// const boolval = false;
 // console.log(typeof boolval.toString());
 
 
@@ -129,17 +129,25 @@ const boolval = false;
 const pixel = '52px';
 const cnrtVal = parseInt(pixel)
 
-console.log(pixel + 10);
+// console.log(pixel + 10);
 
 const pixel1 = "52.3px"
 const cnrtVal1 = parseFloat(pixel1)
 
-console.log(pixel1 + 10);
+// console.log(pixel1 + 10);
 
 const ageInput = "20";
 const conVal2 = Number(ageInput)
-console.log(conVal2 + 10)
+// console.log(conVal2 + 10)
 
 const score = '100';
 const con = +score
-console.log(con + 100);
+// console.log(con + 100);
+
+///===
+
+// string to boolean
+
+const user = 'Darlin';
+const con1 = Boolean(user);
+console.log(con1)
