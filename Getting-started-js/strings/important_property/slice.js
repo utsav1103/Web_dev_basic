@@ -50,6 +50,8 @@ const email = sentences.trim()
 const input = '\n\t Hello, world';
 const output = input.trim()
 
+
+
 //--- using replace method
 
 //basic usage 
@@ -61,3 +63,17 @@ const update = text2.replace('old','new');
 // repeted
 const text3 = 'old text with old words';
 const updated = text3.replace(/old/g,'new');
+
+
+//==== using .includes method
+
+const abc ='I have an apple';
+
+const res = abc.includes('apple')
+
+//cheking for a character
+const res1 =abc.includes('I');
+
+//specifying specific position
+
+const resa = abc.includes('apple', 8);
