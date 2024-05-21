@@ -20,4 +20,35 @@ const binStr = deciNum.toString(2)
 //bigInt
 
 const bigInt = BigInt('590839058239058')
-console.log(bigInt.toString());
+// console.log(bigInt.toString());
+
+
+
+
+
+
+
+
+
+///------
+
+// toFixed method
+
+///------
+
+
+const proPri = 49.9554
+const forPri = proPri.toFixed(2)
+
+// console.log(forPri);
+
+const pie = 3.14139
+const roPie = pie.toFixed(3)
+
+// console.log(roPie);
+
+const weiKg = 70
+const hei = 1.85
+const Bmi =(weiKg / (hei ** 2))
+
+console.log(Bmi.toFixed(2));
