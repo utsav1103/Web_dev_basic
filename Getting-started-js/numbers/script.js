@@ -52,3 +52,26 @@ const hei = 1.85
 const Bmi =(weiKg / (hei ** 2))
 
 console.log(Bmi.toFixed(2));
+
+
+
+///----
+
+// ToExponential() Method
+
+///=====
+
+
+const avoNum = 6.077898908e23
+
+const sciNum = avoNum.toExponential()
+
+// console.log(sciNum);
+
+const num = 10;
+const expo = num ** 2 //10*10
+
+// console.log(expo);
+
+
+
