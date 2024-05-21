@@ -110,9 +110,36 @@ const obj = {name:'Rose', age: 20}
 //basic
 const num1 = 25;
 const strNum1 = num1.toString()
-console.log(typeof strNum1)
+// console.log(typeof strNum1)
 
 //bool
 
 const boolval = false;
-console.log(typeof boolval.toString());
+// console.log(typeof boolval.toString());
+
+
+
+///----
+
+//converting string to number
+
+///----
+
+//parseInt()
+const pixel = '52px';
+const cnrtVal = parseInt(pixel)
+
+console.log(pixel + 10);
+
+const pixel1 = "52.3px"
+const cnrtVal1 = parseFloat(pixel1)
+
+console.log(pixel1 + 10);
+
+const ageInput = "20";
+const conVal2 = Number(ageInput)
+console.log(conVal2 + 10)
+
+const score = '100';
+const con = +score
+console.log(con + 100);
