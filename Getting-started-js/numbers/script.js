@@ -104,6 +104,37 @@ const tem = "temperature: 42.5c";
 const actualtem = parseFloat(tem.replace("temperature:","").replace("c",""))
 
 console.log(actualtem);
+//Calculating Grade Point Average (GPA)
+const inputGPA ="3.8";
+const parsedGPA =parseFloat(inputGPA)
+
+// if(isNaN(parsedGPA)){
+//     console.log('Inavalid GPA input');
+// }else{
+//     console.log(`Your GPA is ${parsedGPA}`);
+// }
+
+//Calculating Savings After a Transaction
+const initialSavings = '1000';
+const widthdrawal = 'Hello'
+const newSavings = parseFloat(initialSavings) - parseFloat(widthdrawal);
+
+// if(isNaN(newSavings)){
+//     console.log('Invalid transaction');
+// }else{
+//     console.log(`Your new savings amount is ${newSavings}`);
+// }
+//Computing the Area of a Circle
+
+const radiusInput = '7';
+const radius = parseFloat(radiusInput)
+const area = Math.PI * Math.pow(radius, 2);
+// if(isNaN(area)){
+//     console.log('Invalid radius');
+// }else{
+//     console.log(`The area of the circle is ${area}`);
+// }
+
 
 
 
