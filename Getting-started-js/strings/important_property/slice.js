@@ -77,3 +77,28 @@ const res1 =abc.includes('I');
 //specifying specific position
 
 const resa = abc.includes('apple', 8);
+
+
+
+//=== converting to stirng
+
+
+//.string method
+
+const num = 43;
+const strNum = String(num)
+console.log(typeof strNum);
+
+//boolean to string
+const bool = true;
+const strBool = String(bool);
+console.log(typeof strBool);
+
+//array to string
+const arr = [1,2,4,6];
+console.log( typeof String(arr));
+
+//object to string
+
+const obj = {name:'Rose', age: 20}
+console.log(typeof String(obj));
