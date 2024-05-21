@@ -2,14 +2,14 @@
 
 const greeting = "Hello , world";
 const extractWord = greeting.slice(7, 13);
-console.log(extractWord);
+// console.log(extractWord);
 
 const text = "Hello Senorita";
 const result = text.slice(7);
 
 const text1 = "Hello darlin";
 const endText = text1.slice(-6);
-console.log(endText);
+// console.log(endText);
 
 //------ using string split method
 
@@ -17,7 +17,7 @@ console.log(endText);
 
 const sentence = "Hello, Nejuko";
 const words = sentence.split(" ");
-console.log(words);
+// console.log(words);
 
 //limit number split
 
@@ -87,18 +87,32 @@ const resa = abc.includes('apple', 8);
 
 const num = 43;
 const strNum = String(num)
-console.log(typeof strNum);
+// console.log(typeof strNum);
 
 //boolean to string
 const bool = true;
 const strBool = String(bool);
-console.log(typeof strBool);
+// console.log(typeof strBool);
 
 //array to string
 const arr = [1,2,4,6];
-console.log( typeof String(arr));
+// console.log( typeof String(arr));
 
 //object to string
 
 const obj = {name:'Rose', age: 20}
-console.log(typeof String(obj));
+// console.log(typeof String(obj));
+
+
+
+
+///------ toSring method
+//basic
+const num1 = 25;
+const strNum1 = num1.toString()
+console.log(typeof strNum1)
+
+//bool
+
+const boolval = false;
+console.log(typeof boolval.toString());
