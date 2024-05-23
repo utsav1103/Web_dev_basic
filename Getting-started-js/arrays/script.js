@@ -129,4 +129,23 @@ const newFruit1 = fruit.unshift('Avacado')
 
 
 
+//=-=-=
+
+// pop & shift
+
+//=-=--=
+
+
+const animal = ['lizard','Dogs','cats','pookies']
+console.log('Original animals', animal);
+
+const popAni = animal.pop()
+console.log('After poping animal', animal);
+
+
+const animal1 = ['lizard','Dogs','cats','pookies']
+console.log('Original animals', animal1);
+
+const popAni1 = animal.shift()
+console.log('After shifting animal', animal1);
 
