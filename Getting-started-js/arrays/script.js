@@ -92,4 +92,18 @@ const clone = Array.from(originalArr)
 
 const arrLike = {0:'a',1:'b',2:'c', length:3}
 const convertedArr = Array.from(arrLike)
-console.log(convertedArr)
+// console.log(convertedArr)
+
+
+
+///====
+
+//accessing the array
+
+//=-=-=-
+
+const studentAges = [20, 30, 14, 21]
+const firstAge = studentAges[2]
+const age = studentAges[studentAges.length - 1]
+console.log(age);
+
