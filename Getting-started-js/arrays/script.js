@@ -34,23 +34,44 @@
 
 //-----
 
-const emptyArr = new Array();
+// const emptyArr = new Array();
 
-// creating an array with predefined size (5)
+//  creating an array with predefined size (5)
 
-const sizeDefineArr = new Array(5)
+// const sizeDefineArr = new Array(5)
 
 
-console.log(sizeDefineArr);
+// console.log(sizeDefineArr);
 
 // creating an array with elements
 
-const fruitArr = new Array('Cherry','Strawberry','Grapes')
-console.log(fruitArr);
+// const fruitArr = new Array('Cherry','Strawberry','Grapes')
+// console.log(fruitArr);
 
 
-// creating an array of mixed type
+//  creating an array of mixed type
 
-const mixedType1 = new Array(1, false, 'Darlin')
+// const mixedType1 = new Array(1, false, 'Darlin')
 
-console.log(mixedType1);
+// console.log(mixedType1);
+
+
+//====
+
+// creating an array using array.of()
+
+// ====
+
+
+
+const numArr = Array.of(1,2,3,4,5)
+
+// creating an array with str
+
+const strArr = Array.of('utsav','vinjal','vishal','pandya','tiny')
+
+// creating an array of with mixed types
+
+const mixArr = Array.of('apple','True', true, false, 20)
+
+console.log(mixArr)
