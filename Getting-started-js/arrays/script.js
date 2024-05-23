@@ -64,14 +64,32 @@
 
 
 
-const numArr = Array.of(1,2,3,4,5)
+// const numArr = Array.of(1,2,3,4,5)
 
-// creating an array with str
+ // creating an array with str
 
-const strArr = Array.of('utsav','vinjal','vishal','pandya','tiny')
+// const strArr = Array.of('utsav','vinjal','vishal','pandya','tiny')
 
-// creating an array of with mixed types
+ // creating an array of with mixed types
 
-const mixArr = Array.of('apple','True', true, false, 20)
+// const mixArr = Array.of('apple','True', true, false, 20)
 
-console.log(mixArr)
+// console.log(mixArr)
+
+
+//--=-=-
+
+// using Array.from()
+
+//=-=-=-=-
+
+
+const originalArr = [1,2,3]
+const clone = Array.from(originalArr)
+// console.log(clone);
+
+// creating an array from an array like Object
+
+const arrLike = {0:'a',1:'b',2:'c', length:3}
+const convertedArr = Array.from(arrLike)
+console.log(convertedArr)
