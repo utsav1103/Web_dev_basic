@@ -105,5 +105,28 @@ const convertedArr = Array.from(arrLike)
 const studentAges = [20, 30, 14, 21]
 const firstAge = studentAges[2]
 const age = studentAges[studentAges.length - 1]
-console.log(age);
+// console.log(age);
+
+
+
+//=-=-=-
+
+//push and unshift methods
+
+//=-=-=
+// push
+const fruit = ['Cherry', 'Kiwi', 'Berries']
+// console.log('original fruits', fruit);
+const newFruit = fruit.push('Avacado')
+// console.log('updated fruits', fruit);
+
+//unshift
+
+const fruits = ['Cherry', 'Kiwi', 'Berries']
+// console.log('original fruits', fruit);
+const newFruit1 = fruit.unshift('Avacado')
+// console.log('updated fruits', fruit);
+
+
+
 
