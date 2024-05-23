@@ -56,6 +56,12 @@
 // console.log(mixedType1);
 
 
+
+
+
+
+
+
 //====
 
 // creating an array using array.of()
@@ -77,6 +83,12 @@
 // console.log(mixArr)
 
 
+
+
+
+
+
+
 //--=-=-
 
 // using Array.from()
@@ -96,6 +108,12 @@ const convertedArr = Array.from(arrLike)
 
 
 
+
+
+
+
+
+
 ///====
 
 //accessing the array
@@ -106,6 +124,13 @@ const studentAges = [20, 30, 14, 21]
 const firstAge = studentAges[2]
 const age = studentAges[studentAges.length - 1]
 // console.log(age);
+
+
+
+
+
+
+
 
 
 
@@ -129,6 +154,13 @@ const newFruit1 = fruit.unshift('Avacado')
 
 
 
+
+
+
+
+
+
+
 //=-=-=
 
 // pop & shift
@@ -137,15 +169,35 @@ const newFruit1 = fruit.unshift('Avacado')
 
 
 const animal = ['lizard','Dogs','cats','pookies']
-console.log('Original animals', animal);
+// console.log('Original animals', animal);
 
 const popAni = animal.pop()
-console.log('After poping animal', animal);
+// console.log('After poping animal', animal);
 
 
 const animal1 = ['lizard','Dogs','cats','pookies']
-console.log('Original animals', animal1);
+// console.log('Original animals', animal1);
 
 const popAni1 = animal.shift()
-console.log('After shifting animal', animal1);
+// console.log('After shifting animal', animal1);
 
+
+
+
+
+
+
+//--==-=
+//-=-=-=
+// using .length property
+//==-=-=-
+//-=--=-=
+
+
+const colors = ['RED','YELLOW','PINK','BLACK','CHERRISH']
+const arrayLen = colors.length
+// console.log(arrayLen)
+
+//modify length
+colors.length = 3
+console.log(colors)
