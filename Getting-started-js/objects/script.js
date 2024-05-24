@@ -7,4 +7,19 @@ const book = {
     available:true,
     price:19.99
 }
-console.log(book);
+// console.log(book);
+
+
+
+
+
+
+//-=[]-=[=-=[]]
+
+// dot notation (.name)
+
+const bookTitle = book.title
+console.log(bookTitle)
+console.log(book.author)
+console.log(book.price)
+console.log(book.available)
