@@ -50,5 +50,34 @@ const person = {
     'last name': 'TK',
 }
 
-console.log(person['first name']);
-console.log(person['last name']);
+// console.log(person['first name']);
+// console.log(person['last name']);
+
+
+
+
+//-=-=-=-
+// adding properties to objects
+
+const userProfile = {
+    userName:'UTSAV',
+    email:'UBT@gmail.com'
+
+}
+userProfile.role ='Spreading Love';
+
+
+
+const book1 = {
+    title:'Harry Potter',
+//    'publication  year': 2024,
+}
+
+
+const book11 = {
+    title:'Harry Potter',
+   
+}
+book11['publication year'] = 2024;
+
+// console.log(book11);
