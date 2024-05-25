@@ -66,20 +66,39 @@
 //IIFE functions(immediately invoked function expression)
 //=-=-=
  (function () {
-    console.log('WELCOME');
+    // console.log('WELCOME');
  }) ();
 
 (function () {
     const num = 5
     const sqr = num*num
-    console.log(sqr);
+    // console.log(sqr);
 })();
 
 (function () {
     const str1 = "HELLO";
     const str2 = "DARLIN";
     const res = str1 + " " + str2;
-    console.log(res);
+    // console.log(res);
 } 
 ) ();
 
+
+
+
+
+
+//-=-=-
+// function parameters vs arguments
+//-=-==-
+
+const greetings = function(name, age){
+    console.log(`Welcom ${name} your age is: ${age}`);
+};
+greetings("TJ", 20);
+
+const addnum = function(a , b) {
+    const result = a + b;
+    console.log(result);
+};
+addnum(44, 56)
