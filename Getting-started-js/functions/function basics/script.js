@@ -11,15 +11,15 @@
 //  sayHello()
 
  //another function
- function greetings (){
-    console.log('Welcome to My WevPage');
- }
+//  function greetings (){
+//     console.log('Welcome to My WevPage');
+//  }
 // greetings()
 
- function showDate(){
-    const currDate = new Date()
-    console.log(`Today's date is ${currDate}`);
- }
+//  function showDate(){
+//     const currDate = new Date()
+//     console.log(`Today's date is ${currDate}`);
+//  }
 //  showDate()
 
 
@@ -28,24 +28,58 @@
 /// Function expression
 ///----
 
-const sayHello = function(){
-    console.log('HELLO DARLIN')
-}
+// const sayHello = function(){
+//     console.log('HELLO DARLIN')
+// }
 
 // sayHello()
 
 
 //example even or odd
 
-const evenOdd = function(){
-    const number = 13;
-    if(number % 2 === 0){
-        console.log('This is Even');
-    }else{
-        console.log('This is Odd');
-    }
-}
+// const evenOdd = function(){
+//     const number = 10;
+//     if(number % 2 === 0){
+//         console.log('This is Even');
+//     }else{
+//         console.log('This is Odd');
+//     }
+// }
 // evenOdd()
 
 
+
+
+
+
+///----
+///anonymous functions
+// unnamed functions
+///----]
+
+
+// function(){
+//     console.log('WELCOME');;
+// }
+
+//--
+//IIFE functions(immediately invoked function expression)
+//=-=-=
+ (function () {
+    console.log('WELCOME');
+ }) ();
+
+(function () {
+    const num = 5
+    const sqr = num*num
+    console.log(sqr);
+})();
+
+(function () {
+    const str1 = "HELLO";
+    const str2 = "DARLIN";
+    const res = str1 + " " + str2;
+    console.log(res);
+} 
+) ();
 
