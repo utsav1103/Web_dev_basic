@@ -95,10 +95,27 @@
 const greetings = function(name, age){
     console.log(`Welcom ${name} your age is: ${age}`);
 };
-greetings("TJ", 20);
+// greetings("TJ", 20);
 
 const addnum = function(a , b) {
     const result = a + b;
-    console.log(result);
+    // console.log(result);
 };
-addnum(44, 56)
+// addnum(44, 56)
+
+
+//=-=-
+//default parameter
+
+const greet = function(name = 'UB', age= 21){
+    console.log(`Hello, my name is ${name}, and I am ${age} years old`)
+};
+// greet();
+
+const multiply = function(a,b = a*2){
+    const result = a * b;
+    console.log(`The result is ${result}`);
+};
+// multiply(2)
+
+
