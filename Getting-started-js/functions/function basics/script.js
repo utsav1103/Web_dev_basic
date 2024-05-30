@@ -10,7 +10,7 @@
 //calling the function or invoke or use the function
 //  sayHello()
 
- //another function
+//another function
 //  function greetings (){
 //     console.log('Welcome to My WevPage');
 //  }
@@ -22,8 +22,6 @@
 //  }
 //  showDate()
 
-
-
 ///----
 /// Function expression
 ///----
@@ -33,7 +31,6 @@
 // }
 
 // sayHello()
-
 
 //example even or odd
 
@@ -47,16 +44,10 @@
 // }
 // evenOdd()
 
-
-
-
-
-
 ///----
 ///anonymous functions
 // unnamed functions
 ///----]
-
 
 // function(){
 //     console.log('WELCOME');;
@@ -65,57 +56,63 @@
 //--
 //IIFE functions(immediately invoked function expression)
 //=-=-=
- (function () {
-    // console.log('WELCOME');
- }) ();
-
 (function () {
-    const num = 5
-    const sqr = num*num
-    // console.log(sqr);
+  // console.log('WELCOME');
 })();
 
 (function () {
-    const str1 = "HELLO";
-    const str2 = "DARLIN";
-    const res = str1 + " " + str2;
-    // console.log(res);
-} 
-) ();
+  const num = 5;
+  const sqr = num * num;
+  // console.log(sqr);
+})();
 
-
-
-
-
+(function () {
+  const str1 = "HELLO";
+  const str2 = "DARLIN";
+  const res = str1 + " " + str2;
+  // console.log(res);
+})();
 
 //-=-=-
 // function parameters vs arguments
 //-=-==-
 
-const greetings = function(name, age){
-    console.log(`Welcom ${name} your age is: ${age}`);
+const greetings = function (name, age) {
+  console.log(`Welcom ${name} your age is: ${age}`);
 };
 // greetings("TJ", 20);
 
-const addnum = function(a , b) {
-    const result = a + b;
-    // console.log(result);
+const addnum = function (a, b) {
+  const result = a + b;
+  // console.log(result);
 };
 // addnum(44, 56)
-
 
 //=-=-
 //default parameter
 
-const greet = function(name = 'UB', age= 21){
-    console.log(`Hello, my name is ${name}, and I am ${age} years old`)
+const greet = function (name = "UB", age = 21) {
+  console.log(`Hello, my name is ${name}, and I am ${age} years old`);
 };
 // greet();
 
-const multiply = function(a,b = a*2){
-    const result = a * b;
-    console.log(`The result is ${result}`);
+const multiply = function (a, b = a * 2) {
+  const result = a * b;
+  console.log(`The result is ${result}`);
 };
 // multiply(2)
 
+//--====-
 
+// return statment
+
+//=-=[]=-
+
+const add = function (a, b) {
+  const result = a + b;
+  console.log("Before retrun");
+  return result;
+  console.log("after return");
+};
+const addRes = add(2, 2);
+console.log(addRes);
