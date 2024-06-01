@@ -67,3 +67,58 @@ const updateStd = (id , newGrade) => {
 };
 updateStd(3, "B")
 // console.log(std);
+
+
+
+//>>>>>
+// Arrays in Objects
+//.>>>>>
+
+
+const todoLists = {
+    title: "Todo List Application",
+    tasks : [
+        {id:1, description: "Buy Groceries", completed: false},
+        {id:2, description: "Go To Gym", completed: false},
+        {id:2, description: "Call Me", completed: false},
+    ],
+};
+//accessing properties
+todoTitle = todoLists.title;
+//tasks
+const allTasks = todoLists.tasks;
+// console.log(allTasks);
+//function to add a task
+
+const addTask = (description) => {
+    //get new id
+    const newId = todoLists.tasks.length +1;
+    const newTask = {
+        id: newId,
+        description,
+        completed: true,
+    };
+    //push the new task into the original task
+    todoLists.tasks.push(newTask);
+};
+
+//call fn
+addTask("Chat with POOKIE")
+
+// console.log(todoLists);
+
+//fun to mark a task as completed
+
+const markAtas  = (id) => {
+    //find the task
+    const foundTask = todoLists.tasks.find((tasks) => tasks.id === id)
+    if(foundTask){
+        foundTask.completed = true;
+    }else{
+        // console.log("Task not found")
+    }
+};
+    markAtas(1)
+    // console.log(todoLists);
+
+
