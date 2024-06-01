@@ -122,3 +122,58 @@ const markAtas  = (id) => {
     // console.log(todoLists);
 
 
+
+
+
+
+
+
+    //>>>>>
+    //ITERATE THORUGH ARRAYS USING FOREACH()
+    //>>>>>
+
+    //basic example
+
+    const fruits = [
+        {name: 'Apple', color: 'Red'},
+        {name: 'Banana', color: 'Yellow'},
+        {name: 'Cherry', color: 'Red'},
+    ];
+    fruits.forEach((currentVal, index, array) => {
+        console.log(currentVal, index, array);
+    });
+
+    //complex example {calculate total cost of items in the cart and list the names of all items int the cart}
+
+    const cart = [
+        {name:'Laptop',price: 1000,qty: 1},
+        {name:'Phone',price: 500,qty: 2},
+        {name:'TV',price: 1500,qty: 1},
+        {name:'Headphones',price: 100,qty: 3}
+    ];
+    //calculate total cost
+    let totalCost = 0;
+    cart.forEach((item) => {
+        //sum all product price
+        totalCost += item.price * item.qty;
+    });
+    // console.log(totalCost);
+
+    //list all the names of the products
+
+    let productName = [];
+    cart.forEach((item) => {
+        productName.push(item.name)
+    });
+    // console.log(productName);
+    //calculate total no. of items
+
+    let totalItems = 0;
+    cart.forEach((item) => {
+        totalItems += item.qty
+    });
+    // console.log(totalItems);
+
+
+
+
