@@ -303,3 +303,26 @@ const newSong = {id:'s5', title:"Somebody That I Used To Know", aritst:"Gotye"};
 playlist.splice(1, 0 , newSong);
 // console.log(playlist);
 
+
+
+
+
+
+
+//>>>>>
+//object.assign property
+//>>>>>>
+
+//updating properties in a student in class
+const student1 = [
+    {id: 1,name:"Utsav", grade:"A"},
+    {id: 2,name:"Tisa", grade:"A"},
+];
+//grade update
+const gradeUpdate = [{grade: "A+"},{grade:"A++"}];
+//update the students
+const updatedStu = student1.map((student, index) => {
+    return Object.assign({},student,gradeUpdate[index]);
+});
+
+console.log(updatedStu);
