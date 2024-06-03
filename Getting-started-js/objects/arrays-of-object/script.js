@@ -325,4 +325,21 @@ const updatedStu = student1.map((student, index) => {
     return Object.assign({},student,gradeUpdate[index]);
 });
 
-console.log(updatedStu);
+// console.log(updatedStu);
+
+
+
+
+
+
+//>>>>  search and filter using find()
+//>>>>
+const patients = [
+    {id: 101, name:'Sarah', disease: "cold"},
+    {id: 102, name:'Danny', disease: "Fever"},
+    {id: 103, name:'Angel', disease: "cold"},
+
+];
+//patient with cold
+const paitentWithCold = patients.find(patient => patient.disease === "cold");
+console.log(paitentWithCold);
