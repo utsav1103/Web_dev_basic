@@ -227,4 +227,79 @@ const amountFilter = transAction.filter(
   (transaction) => transaction.amount > 100
 );
 
-console.log(amountFilter);
+// console.log(amountFilter);
+
+
+
+
+
+
+//>>>>
+// transformation and manipulation
+// using splice()
+//>>>>>
+
+
+//remove inactive users
+
+const usersArr = [
+    {
+      id: 1,
+      isActive: true,
+      name: "Utsav",
+    },
+    {
+      id: 2,
+      isActive: true,
+      name: "Tisa",
+    },
+    {
+      id: 3,
+      isActive: false,
+      name: "PinkMen",
+    },
+  ];
+
+  //find index of user
+  const indexToRemove = usersArr.findIndex((user)=> user.id === 3 && !user.isActive  
+  );
+  //use splice
+  if(indexToRemove !== -1){
+    usersArr.splice(indexToRemove, 1);
+  }
+//   console.log(usersArr);
+
+
+//>>>>>>managing playlist 
+
+const playlist = [
+    {id:"s1", title: "On My Way", aritst:"Sabrina"},
+    {id:"s2", title: "HeartBreak Anniversary", aritst:"Giveon"},
+    {id:"s3", title: "Let Her Go", aritst:"Passenger"},
+    {id:"s4", title: "Can You Feel My Heart", aritst:"Bring Me To The Horizon"},
+];
+//remove song of id s4
+
+const removeSong = playlist.findIndex(function(song){
+    return song.id === "s4";
+});
+
+// if(removeSong !== -1){
+//     playlist.splice(removeSong, 1);
+// }
+// console.log(playlist);
+
+// move song to id of s1 to s3 position
+const indexToMove = playlist.findIndex(song => song.id === 's1')
+if(indexToMove !== -1){
+    const [SongToMove] = playlist.splice(indexToMove, 1);
+    // console.log(SongToMove);
+    playlist.splice(2,0,SongToMove)
+}
+// console.log(playlist);
+
+//inset new song
+const newSong = {id:'s5', title:"Somebody That I Used To Know", aritst:"Gotye"};
+playlist.splice(1, 0 , newSong);
+// console.log(playlist);
+
