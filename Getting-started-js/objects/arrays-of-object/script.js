@@ -140,7 +140,7 @@ const markAtas  = (id) => {
         {name: 'Cherry', color: 'Red'},
     ];
     fruits.forEach((currentVal, index, array) => {
-        console.log(currentVal, index, array);
+       // console.log(currentVal, index, array);
     });
 
     //complex example {calculate total cost of items in the cart and list the names of all items int the cart}
@@ -174,6 +174,41 @@ const markAtas  = (id) => {
     });
     // console.log(totalItems);
 
+
+
+
+
+
+
+    //>>>>>
+    // iterating through arrays using 'Map()'
+    //>>>>>
+
+
+    const ShoppingCart = [
+        {name:'Laptop',price: 1000,qty: 1},
+        {name:'Phone',price: 500,qty: 2},
+        {name:'TV',price: 1500,qty: 1},
+        {name:'Headphones',price: 100,qty: 3}
+    ];
+
+    //add 10% discount using map()
+
+    const discountCart = ShoppingCart.map((product) => {
+        return {
+            name: product.name,
+            price: product.price * 0.9,
+        }
+    });
+    // console.log(discountCart);
+
+
+    //get all the product names only
+
+    const ProductNameONly = ShoppingCart.map((product) => {
+        return{name: product.name};
+    });
+    // console.log(ProductNameONly);
 
 
 
