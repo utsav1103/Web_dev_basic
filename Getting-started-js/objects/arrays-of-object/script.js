@@ -342,4 +342,24 @@ const patients = [
 ];
 //patient with cold
 const paitentWithCold = patients.find(patient => patient.disease === "cold");
-console.log(paitentWithCold);
+// console.log(paitentWithCold);
+
+
+
+
+//>>>>>
+//<Some()> method
+//>>>>>
+
+
+const patient1 = [
+    {id: 101, name:'Sarah', disease: "cold"},
+    {id: 102, name:'Danny', disease: "Fever"},
+    {id: 103, name:'Angel', disease: "cold"},
+
+];
+//patient with cold
+const paitentWithCold1 = patient1.some(patient => patient.disease === "cold");
+
+// console.log(paitentWithCold1);
+
