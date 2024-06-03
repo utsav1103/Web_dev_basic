@@ -363,3 +363,21 @@ const paitentWithCold1 = patient1.some(patient => patient.disease === "cold");
 
 // console.log(paitentWithCold1);
 
+
+
+
+//>>>>>
+//array every() method
+//>>>>>
+
+const studArr = [{
+    id: 1, name:"Utsav", grade: "A+"
+},
+{id:2, name:"Tisa", grade: "A+"},
+{id:2, name:"Pinkmen", grade: "A"},
+];
+
+const allPassed = studArr.every((student) => student.grade !== "F");
+console.log(allPassed);
+
+
