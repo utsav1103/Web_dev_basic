@@ -1,0 +1,22 @@
+1 pwd (print current working directory).
+
+
+2 cd (change to specified directory)
+
+3 cd.. (navigate up one directory)
+
+//file management:
+
+1. dir - list current directory contents.
+
+2. touch - create empty file (linux\macOs).
+
+3. mkdir - create directory
+
+4. del - delete file (windows)
+
+5. rmdir - dlete drictory and contents
+
+6. copy - copy files
+
+7. move - move or rename files
