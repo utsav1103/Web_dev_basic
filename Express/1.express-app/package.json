@@ -1,0 +1,19 @@
+{
+  "name": "1.express-app",
+  "version": "2.0.0",
+  "description": "My fitst express app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Expressjs",
+    "nodejs",
+    "web"
+  ],
+  "author": "Utsav",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
