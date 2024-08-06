@@ -1,0 +1,19 @@
+{
+  "name": "book-api",
+  "version": "2.0.1",
+  "description": "Simple API book without DB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "MERN",
+    "stack"
+  ],
+  "author": "UTSAV",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
