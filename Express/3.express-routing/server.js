@@ -1,58 +1,22 @@
 const express = require("express");
+
+const userRouter = require("./routes/usersRouter");
+const postRouter = require("./routes/postRouter");
 const app = express();
+
 const PORT = 5000;
 
 //home route
-app.get('/', (req, res) => {
+app.get('/', (req, res )=> {
     res.json({
-        message: "welcome tissa..",
-    });
+        message: "Welcome tissa.. ,to the main app"
+    })
 });
 
+//!>>> using user router
 
-//! users route
-//Getting all users 
-app.get('/users', (req, res)=>{
-    res.json({
-        message: "all users fetched",
-    });
-})
-
-
-//getting a user
-app.get('/users/:id', (req, res)=>{
-    res.json({
-        message: "User fetched",
-    });
-});
-
-//update a user
-app.put('/users/:id', (req, res)=>{
-    res.json({
-        message: "user updated",
-    });
-});
-
-//delete a user
-
-app.delete('/users/:id', (req, res)=>{
-    res.json({
-        message: "user deleted",
-    });
-});
-
-//! posts route
-//Getting all users 
-
-
-
-//getting a user
-
-
-//update a user
-
-
-//delete a user
+app.use('/users', userRouter);
+app.use('/posts', postRouter);
 
 
 
