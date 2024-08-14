@@ -37,6 +37,7 @@ app.get('/user', (req, res) =>{
         age: 20,
         isPremiumUser: true,
         email: "exm@gmail.com",
+        isLogin: true,
     };
     res.render("userData.ejs", userData );
 });

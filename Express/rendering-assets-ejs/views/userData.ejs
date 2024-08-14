@@ -14,6 +14,12 @@
      <p>Email: <%=email%></p>
      <p>AGE: <%=age%></p>
      <p>Premium: <%=isPremiumUser%></p>
-    
+     <% if(isPremiumUser){ %>
+        <p>You are a Premium member</p>
+        <% } else {%>
+            <p>You are not a Premium member</p>
+     <% }%>
+
+    <P><%=(isLogin)? "Welcome" : "please log in"%></P>
 </body>
 </html>
