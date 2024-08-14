@@ -29,6 +29,18 @@ app.get('/gallery', (req, res) => {
     res.render("gallery.ejs");
 });
 
+//? render user data
+app.get('/user', (req, res) =>{
+    //dummy user content
+    const userData = {
+        username: "Tissa",
+        age: 20,
+        isPremiumUser: true,
+        email: "exm@gmail.com",
+    };
+    res.render("userData.ejs", userData );
+});
+
 
 
 
