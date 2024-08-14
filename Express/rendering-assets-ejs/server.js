@@ -5,26 +5,28 @@ const PORT = 3000;
 // Serve the static files/folder
 
 app.use(express.static(path.join(__dirname, 'public')));
+//* set the view engin to ejs
 
+app.set('view engine', 'ejs');
 
 //?Render home page/route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views','home.html'));
+   res.render("home.ejs");
 });
 
 //?Render about page/route
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views','about.html'));
+    res.render("about.ejs");
 });
 
 //?Render contact page/route
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views','contact.html'));
+    res.render("contact.ejs");
 });
 
 //?Render gallery page/route
 app.get('/gallery', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views','gallery.html'));
+    res.render("gallery.ejs");
 });
 
 
