@@ -22,6 +22,29 @@ const connectDB = async() => {
     try {
         await client.connect();
         console.log("MongoDB connected successfully");
+        //1.database name (school);
+        const database = client.db('masynctech');
+        //2.Collections (students)
+        const students = database.collection('students');
+        //3.Documents() using the insertOne
+        // const result = await students.insertOne({
+        //   name: 'Tissa',
+        //   age: 20,
+        //   subject: ['Math', 'Physics'],
+        // });
+        //4.Documents() using the insertMany
+        const results = await students.insertMany([
+          {name: "Utsav",
+            age: 21,
+            subject:['Music','Sports'],
+          },
+          {name: "Tan",
+            age: 20,
+            subject:['Music','Programming'],
+          },
+        ])
+        console.log(results);
+        
     }catch(error){
         console.log(error);
         
