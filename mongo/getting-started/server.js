@@ -50,11 +50,28 @@ const connectDB = async() => {
         // const results = await resultCursor.toArray();
         //? findOne method
 
-        const results = await students.findOne({
-          age: 20
-        });
+        // const results = await students.findOne({
+        //   age: 20
+        // });
 
-        console.log(results);
+        // console.log(results);
+
+        //! update method
+        //! updateOne 
+        // const result = await students.updateOne({
+        //   name: 'Tan'
+        // },{
+        //   $set:{name: 'Hinata'}
+        // })
+        // console.log(result);
+
+        //!updatemany
+        // const result = await students.updateMany({
+        //   grade: 'B',
+        // },{
+        //   $set:{pass: true}
+        // });
+        // console.log(result);
         
     }catch(error){
         console.log(error);
