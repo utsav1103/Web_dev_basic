@@ -33,16 +33,27 @@ const connectDB = async() => {
         //   subject: ['Math', 'Physics'],
         // });
         //4.Documents() using the insertMany
-        const results = await students.insertMany([
-          {name: "Utsav",
-            age: 21,
-            subject:['Music','Sports'],
-          },
-          {name: "Tan",
-            age: 20,
-            subject:['Music','Programming'],
-          },
-        ])
+        // const results = await students.insertMany([
+        //   {name: "Utsav",
+        //     age: 21,
+        //     subject:['Music','Sports'],
+        //   },
+        //   {name: "Tan",
+        //     age: 20,
+        //     subject:['Music','Programming'],
+        //   },
+        // ])
+        //! -- read operations --
+        //? find method
+
+        // const resultCursor = students.find();
+        // const results = await resultCursor.toArray();
+        //? findOne method
+
+        const results = await students.findOne({
+          age: 20
+        });
+
         console.log(results);
         
     }catch(error){
