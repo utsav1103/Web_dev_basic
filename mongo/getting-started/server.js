@@ -72,6 +72,18 @@ const connectDB = async() => {
         //   $set:{pass: true}
         // });
         // console.log(result);
+
+        //! delete operations
+        //* deleteOne
+        // const result = await students.deleteOne({name:'Hinata'});
+
+        // console.log(result);
+        //* deleteMany 
+        // const result = await students.deleteMany({grade: 'B'});
+
+        //*findOneAndDelete
+        // const result = await students.findOneAndDelete({name: 'Hinata'});
+        // console.log(result);
         
     }catch(error){
         console.log(error);
