@@ -19,6 +19,27 @@ const connectTodb = async() =>{
 };
 //call function
 connectTodb();
+
+//! Design schema
+const userProfileSchema = new mongoose.Schema({
+    username: String,
+    age: Number,
+    birthday: Date,
+    isActive: Boolean,
+    hobbies: [String],
+    objectId: mongoose.Schema.Types.ObjectId,
+    address: {
+        street: String,
+        city: String,
+        postCode: Number,
+    },
+    customData: mongoose.Schema.Types.Mixed,
+});
+
+//! Compile the schema to form the model
+
+const user =  mongoose.model("User", userProfileSchema);
+
 //Start the server
 app.listen(PORT, console.log(`Server is running on port ${PORT}`)
 );
