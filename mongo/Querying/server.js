@@ -20,7 +20,8 @@ const connectDB = async() => {
         console.log("MongoDB Connected successfully");
         const database = client.db('masynctech');
         //collections
-        const employees = database.collection('employees')
+        const employees = database.collection('employees');
+        const books = database.collection('books')
         // const employeesDocs = [
         //   {name: "Utsav", age:21 , department: "HR"},
         //   {name: "Tissa", age:20 , department: "Finance"},
@@ -29,7 +30,45 @@ const connectDB = async() => {
         //   {name: "Van", age: 21, department: "IT"},
         // ];
         // const result = await employees.insertMany(employeesDocs);
-        // console.log(result);
+
+        const booksDocs = [
+          {
+            title: "To Kill a Mockingbird",
+            author: "Harper Lee",
+            year: 1960,
+            genre: "Dram",
+          },
+          {
+            title: "The 1984",
+            author: "Geaorge Orwell",
+            year: 1949,
+            genre: "Dystopian",
+          },
+    
+          {
+            title: "The Catcher in the Rye",
+            author: "JD",
+            year: 1951,
+            genre: "Drama",
+          },
+          {
+            title: "The Brave World",
+            author: "Huxley",
+            year: 1932,
+            genre: "Dysptopian",
+          },
+          {
+            title: "The Hobbit",
+            author: "J.R.R",
+            year: 1937,
+            genre: "Fantasy",
+          },
+        ];
+
+        //* creating books collection
+
+        //  const results = await books.insertMany(booksDocs);
+        //  console.log(results);
         
         //? Querying operators
         //! $gt
@@ -52,11 +91,29 @@ const connectDB = async() => {
         //  const result = await employeesCursor.toArray();
 
         //! multiple condition
-        const employeesCursor = employees.find({age: {$gt: 19, $lt: 22}});
-          const result = await employeesCursor.toArray();
+        // const employeesCursor = employees.find({age: {$gt: 19, $lt: 22}});
+        //   const result = await employeesCursor.toArray();
 
-        console.log(result);
-        
+        // console.log(result);
+        //? logical operators
+
+        // //! or operator
+        // const booksCursor = books.find({$or:[{genre:'Drama'},{year:{$lt: 1950}}],
+        // });
+        //  const result = await booksCursor.toArray();
+        //  console.log(result);
+
+        // //! And operator
+        // const booksCursor = books.find({$and:[{genre:'Dystopian'},{year:{$gt: 1930}}],
+        // });
+        //  const result = await booksCursor.toArray();
+        //  console.log(result);
+
+        //! Nor operator
+        const booksCursor = books.find({$nor:[{genre:'Drama'},{year:{year: 1930}}],
+        });
+         const result = await booksCursor.toArray();
+         console.log(result);
         
     }catch(error){
         console.log(error);
