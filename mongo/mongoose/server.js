@@ -90,7 +90,28 @@ const user = mongoose.model("User", userProfileSchema);
 //     .catch((e) => console.log(e));
   
 
-//? insertMany
+//! Read operations
+//? find
+// user.find().then((user) => {
+//     console.log(user);
+    
+// }).catch(e=>console.log(e)
+// );
+//?findOne
+
+// user.findOne({
+//     age: 20,
+// }).then((user) => {
+//         console.log(user);
+        
+//     }).catch(e=>console.log(e)
+//     );
+//? findById
+// user.findById(/*objectID*/).then((user) => {
+//             console.log(user);
+            
+//         }).catch(e=>console.log(e)
+//         );
 
 
 //Start the server
