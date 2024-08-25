@@ -1,45 +1,97 @@
-const express = require ('express');
+const express = require("express");
 const mongoose = require("mongoose");
-const PORT = 3000 || process.env.PORT
+const PORT = 3000 || process.env.PORT;
 
 //Instance of express
-const app = express()
-const URL = "mongodb+srv://utsavu858:eynD6Q6Q03hMtTKZ@utsav-cluster.osnhx.mongodb.net/students-database";
+const app = express();
+const URL =
+  "mongodb+srv://utsavu858:eynD6Q6Q03hMtTKZ@utsav-cluster.osnhx.mongodb.net/students-database";
 //connect to mongodb
 
-const connectTodb = async() =>{
-    try{
-        await mongoose.connect(URL);
-        console.log("Mongodb connected successfully");
-        
-    }catch(error){
-        console.log(`Error connecting to Mongodb ${error}`);
-        
-    }
+const connectTodb = async () => {
+  try {
+    await mongoose.connect(URL);
+    console.log("Mongodb connected successfully");
+  } catch (error) {
+    console.log(`Error connecting to Mongodb ${error}`);
+  }
 };
 //call function
 connectTodb();
 
 //! Design schema
 const userProfileSchema = new mongoose.Schema({
-    username: String,
-    age: Number,
-    birthday: Date,
-    isActive: Boolean,
-    hobbies: [String],
-    objectId: mongoose.Schema.Types.ObjectId,
-    address: {
-        street: String,
-        city: String,
-        postCode: Number,
-    },
-    customData: mongoose.Schema.Types.Mixed,
+  username: String,
+  age: Number,
+  birthday: Date,
+  isActive: Boolean,
+  hobbies: [String],
+  objectId: mongoose.Schema.Types.ObjectId,
+  address: {
+    street: String,
+    city: String,
+    postCode: Number,
+  },
+  customData: mongoose.Schema.Types.Mixed,
 });
 
 //! Compile the schema to form the model
 
-const user =  mongoose.model("User", userProfileSchema);
+const user = mongoose.model("User", userProfileSchema);
+//! CRUD OPERATIONS
+
+//?create operation
+//save
+// const newUser = new user({
+//   username: "EREN",
+//   age: 21,
+//   birthday: new Date("2003-03-11"),
+//   isActive: true,
+//   hobbies: ["Cricket", "Reading", "Swimming"],
+//   address: {
+//     street: "example",
+//     city:'Indore',
+//     postCode: 1111,
+//   },
+//   customData: {
+//     country: "India",
+//   },
+// });
+
+//save the document
+// newUser
+// .save()
+// .then((data) => {
+//     console.log(data);
+    
+// })
+// .catch((e) => console.log(e));
+
+//create 
+// user.create({
+//     username: "MIkASA",
+//     age: 20,
+//     birthday: new Date("2004-03-11"),
+//     isActive: true,
+//     hobbies: ["basketball", "pet-parent", "Musician"],
+//     address: {
+//       street: "example",
+//       city:'Indore',
+//       postCode: 1111,
+//     },
+//     customData: {
+//       country: "India",
+//     },
+//   })
+//     .then((data) => {
+//       console.log(data);
+      
+//     })
+//     .catch((e) => console.log(e));
+  
+
+//? insertMany
+
 
 //Start the server
-app.listen(PORT, console.log(`Server is running on port ${PORT}`)
-);
+app.listen(PORT, console.log(`Server is running on port ${PORT}`));
