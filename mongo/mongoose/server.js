@@ -63,11 +63,11 @@ const user = mongoose.model("User", userProfileSchema);
 // .save()
 // .then((data) => {
 //     console.log(data);
-    
+
 // })
 // .catch((e) => console.log(e));
 
-//create 
+//create
 // user.create({
 //     username: "MIkASA",
 //     age: 20,
@@ -85,16 +85,15 @@ const user = mongoose.model("User", userProfileSchema);
 //   })
 //     .then((data) => {
 //       console.log(data);
-      
+
 //     })
 //     .catch((e) => console.log(e));
-  
 
 //! Read operations
 //? find
 // user.find().then((user) => {
 //     console.log(user);
-    
+
 // }).catch(e=>console.log(e)
 // );
 //?findOne
@@ -103,16 +102,15 @@ const user = mongoose.model("User", userProfileSchema);
 //     age: 20,
 // }).then((user) => {
 //         console.log(user);
-        
+
 //     }).catch(e=>console.log(e)
 //     );
 //? findById
 // user.findById(/*objectID*/).then((user) => {
 //             console.log(user);
-            
+
 //         }).catch(e=>console.log(e)
 //         );
-
 
 //!QUERY OPERATOR
 
@@ -121,26 +119,46 @@ const user = mongoose.model("User", userProfileSchema);
 //   try{
 //     const users = await user.find().where('age').gte(20);
 //     console.log(users);
-    
+
 //   }catch(error){
 //     console.log(error);
-    
+
 //   }
 // };
 // findUsers();
 //? Limit
 
-const findUsers = async () => {
-    try{
-      const users = await user.find().where('age').gte(20).sort({username: 1}).limit(1);
-      console.log(users);
-      
-    }catch(error){
-      console.log(error);
-      
-    }
-  };
-  findUsers();
+// const findUsers = async () => {
+//     try{
+//       const users = await user.find().where('age').gte(20).sort({username: 1}).limit(1);
+//       console.log(users);
+
+//     }catch(error){
+//       console.log(error);
+
+//     }
+//   };
+//   findUsers();
+
+//! update operators
+
+//? $SET
+// const updateDoc = async () => {
+//   try {
+//     const updatedDoc = await user.findOneAndUpdate(
+//       {
+//         username: "abc" /*example*/,
+//       },
+//       { $set: { age: 22 } },
+//       {
+//         new: true,
+//       }
+//     );
+//     console.log(updatedDoc);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 //Start the server
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
