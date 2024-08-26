@@ -114,5 +114,33 @@ const user = mongoose.model("User", userProfileSchema);
 //         );
 
 
+//!QUERY OPERATOR
+
+//? WHERE
+// const findUsers = async () => {
+//   try{
+//     const users = await user.find().where('age').gte(20);
+//     console.log(users);
+    
+//   }catch(error){
+//     console.log(error);
+    
+//   }
+// };
+// findUsers();
+//? Limit
+
+const findUsers = async () => {
+    try{
+      const users = await user.find().where('age').gte(20).sort({username: 1}).limit(1);
+      console.log(users);
+      
+    }catch(error){
+      console.log(error);
+      
+    }
+  };
+  findUsers();
+
 //Start the server
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
