@@ -45,8 +45,6 @@ gender: {
   required: [true, 'Email is required'],
   
 },
-},{
-  Timestamp: true
 });
 //! compile the schema to form the model
 const User = mongoose.model("User", userProfileSchema);
