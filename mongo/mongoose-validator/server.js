@@ -25,26 +25,34 @@ const userProfileSchema = new mongoose.Schema({
 username: {
   type: String,
   required: [true, 'username is required'],
-  uniqure: true,
-  minLength: 3,
-  maxLength: 10,
+  validate: {
+    validator: function(value){
+      return /^[a-zA-Z0-9]+$/.test(value)
+    },
+    message:'Username can only contain alphanumeric character'
+  }
 },
 email: {
   type: String,
   required: [true, 'Email is required'],
-  match: /@/,
+  validate: {
+    validator: function(value){
+      return value.endsWith("@gmail.com");
+    },
+    message:'Email must end with @gmail.com'
+  },
 },
-age: {
-  type: Number,
- enum:['Male','Female'],
-  min: 18,
-  max: 25,
-},
-gender: {
-  type: String,
-  required: [true, 'Email is required'],
+// age: {
+//   type: Number,
+//  enum:['Male','Female'],
+//   min: 18,
+//   max: 25,
+// },
+// gender: {
+//   type: String,
+//   required: [true, 'Email is required'],
   
-},
+// },
 });
 //! compile the schema to form the model
 const User = mongoose.model("User", userProfileSchema);
@@ -52,9 +60,9 @@ const User = mongoose.model("User", userProfileSchema);
 const createDoc = async () => {
   try{
     const userCreated = await User.create({
-      gender: "Female",
+      // gender: "Female",
       username: 'Mikasa',
-      age: 20,
+      // age: 20,
       email: 'mikasa@gmail.com'
     });
     console.log(userCreated);
