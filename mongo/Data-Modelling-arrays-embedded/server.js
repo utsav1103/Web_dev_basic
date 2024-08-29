@@ -21,24 +21,22 @@ const connectTodb = async () => {
 connectTodb();
 
 //! design schema
-//!address schema here
-const addressSchema = new mongoose.Schema(
+//!students schema here
+const studentsSchema = new mongoose.Schema(
   {
-    street: String,
-    city: String,
-    state: String,
-    zip: Number,
+    name: String,
+    grade: String,
+    age: Number,
   },
   { timestamps: true }
 );
-//!user schema
+//!classroom schema
 
-const userSchema = new mongoose.Schema(
+const classroomSchema = new mongoose.Schema(
   {
-    name: String,
-    email: String,
-    state: String,
-    address: addressSchema, //our embedded doc
+    className: String,
+    students: [studentsSchema]
+    
   },
   {
     timestamps: true,
@@ -46,27 +44,24 @@ const userSchema = new mongoose.Schema(
 );
 
 //? compile the schema
-const User = mongoose.model("User", userSchema);
+const ClassRoom = mongoose.model("Classroom", classroomSchema);
 
-const createUser = async () => {
+const createClassroom = async () => {
   try {
-    const newUser = await User.create({
-      name: "Tissa",
-      email: "Tissa@gmail.com",
-      address: {
-        street: "Kumasi Ot2",
-        city: "Camp",
-        state: "Ghana",
-        zip: 1122,
-      },
+    const newDoc = await ClassRoom.create({
+      className: 'Math 101',
+      students: [
+        {name: 'Tissa',age: '20', grade:'B'},
+        {name: 'Utsav',age: '21', grade:'A'},{name: 'Mikasa',age: '20', grade:'A'},
+      ]
     });
-    console.log(newUser);
+    console.log(newDoc);
   } catch (error) {
     console.log(error);
   }
 };
 
-createUser();
+createClassroom();
 
 //start the server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
