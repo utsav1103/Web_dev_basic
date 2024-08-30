@@ -76,7 +76,7 @@ const createBook = async () => {
     //create author
     const newDoc = await Book.create({
       title:'Has a furry face',
-      
+      author:'/*objectId*/',
     });
     console.log(newDoc);
   }catch(error){
@@ -85,6 +85,21 @@ const createBook = async () => {
   }
 };
 createBook();
+
+//!list books
+
+const fetchBooks = async () => {
+  try{
+    const books = await Book.find().populate('author');
+    console.log(books);
+    
+  }catch(error){
+
+  console.log(error);
+  
+  }
+};
+fetchBooks();
 
 //start the server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
