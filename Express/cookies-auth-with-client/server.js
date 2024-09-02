@@ -8,7 +8,8 @@ app.use(express.urlencoded({extended:true}));
 //! Set the view engine
 
 app.set('view engine','ejs');
-app.set('views', path.join(__dirname, "views"));
+//below code is not required because we are using app.set above
+// app.set('views', path.join(__dirname, "views"));
 
 //? simulated database of users
 const users = [{
@@ -27,7 +28,22 @@ app.get('/login', (req, res) =>{
 
 //login route logic
 app.post('/login', (req, res) =>{
+    console.log(req.body);
     
+    //* find the user login details
+    const userFound = users.find((user)=>{
+        const {username, password} = req.body
+        return user.username === username && user.password === password
+    })
+    console.log(userFound);
+    
+    //* create some cookies(cookies)
+    //*render the user dashboard
+
+    if( userFound){
+        res.redirect('/dashboard');
+    }
+    //* else rediredct the user to login page
 });
 
 //dashBord route
