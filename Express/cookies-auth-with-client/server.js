@@ -38,6 +38,14 @@ app.post('/login', (req, res) =>{
     console.log(userFound);
     
     //* create some cookies(cookies)
+      //prepare the login use data 
+    //*setting the cookie with the userdata
+    res.cookie('userData', JSON.stringify(userFound), {
+        maxAge: 3 * 24 * 60 * 1000,//3 days expiration
+        httpOnly: true,
+        secure:false,
+        sameSite: 'strict',
+    })
     //*render the user dashboard
 
     if( userFound){
