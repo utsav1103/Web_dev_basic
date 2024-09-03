@@ -1,4 +1,5 @@
 const express = require ('express');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const app = express();
 
@@ -10,6 +11,9 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
 //below code is not required because we are using app.set above
 // app.set('views', path.join(__dirname, "views"));
+
+app.use(cookieParser());
+
 
 //? simulated database of users
 const users = [{
@@ -56,7 +60,21 @@ app.post('/login', (req, res) =>{
 
 //dashBord route
 app.get('/dashboard', (req, res) =>{
-    res.render('dashboard');
+
+    //?grab the user from the cookie
+    const userData = req.cookies.userData ? JSON.parse(req.cookies.userData):null;
+    
+    const username = userData ? userData.username : null
+    
+    //?render the template
+    if(username){
+        res.render("dashboard", {username});
+    }else{
+        //? redirect to login
+        res.redirect('/login');
+    }
+
+    
 });
 
 //logOut route
