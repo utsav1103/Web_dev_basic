@@ -78,8 +78,11 @@ app.get('/dashboard', (req, res) =>{
 });
 
 //logOut route
-app.post('/logout', (req, res) =>{
-    
+app.get('/logout', (req, res) =>{
+    //* logout
+    res.clearCookie('userData');
+    //*redirect
+    res.redirect('/login');
 });
 
 
