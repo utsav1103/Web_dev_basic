@@ -39,6 +39,30 @@ app.set('view engine','ejs');
 app.use(cookieParser());
 
 
+//?????>>>>>Custom MIDDLEWARES
+const isAuthenticated = (req, res, next) =>{
+    //* check the user in the cookie
+    const userDataCookie = req.cookie.userData;
+    try{
+        const userData = userDataCookie && JSON.parse(userDataCookie);
+        console.log(userData);
+        if(userData && userData.username){
+            //*add the login user into the req object
+            req.userData = userData
+            return next();
+        }else{
+            res.send('YOU are not logged In');
+        }
+        
+    }catch(error) {
+        console.log(error);
+        
+    }
+    
+    
+};
+
+
 
 
 //HOme Route
@@ -48,6 +72,12 @@ app.get('/', (req, res)=>{
 //login route
 app.get('/login', (req, res) =>{
     res.render('login');
+});
+
+
+//admin route
+app.get('/admin-only',isAuthenticated, (req, res) =>{
+    res.render('admin');
 });
 
 //rendering Register route
@@ -81,7 +111,10 @@ if(userFound && await bcrypt.compare(password,userFound.password)){
     //* create some cookies(cookies)
       //prepare the login use data 
     //*setting the cookie with the userdata
-    res.cookie('userData', JSON.stringify(userFound), {
+    res.cookie('userData', JSON.stringify({
+        username: userFound.username,
+        role: userFound.role,
+    }), {
         maxAge: 3 * 24 * 60 * 1000,//3 days expiration
         httpOnly: true,
         secure:false,
