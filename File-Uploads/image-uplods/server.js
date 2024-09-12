@@ -1,6 +1,7 @@
+require("dotenv").config();
 const express = require('express');
-const multer = require('multer')
-const multer = require('cloudinary').v2;
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
 const {CloudinaryStorage} = require('multer-storage-cloudinary');
 const PORT = 5000;
 const app = express();
@@ -38,6 +39,12 @@ const upload = multer({
             cb(new Error('Not an image! please upload an image', false));
         }
     },
+});
+
+//? UPLOAD ROUTE
+app.post('/upload',upload.single('file'), async (req, res) =>{
+
+    res.json({message: "File upload"});
 });
 
 //* Start the server
