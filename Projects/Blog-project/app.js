@@ -20,6 +20,25 @@ app.get('/auth/login',(req, res) => {
     res.render("login");
 });
 
+//MAIN LOGIC FOR USE LOGIN
+
+app.post("/auth/login", async (req, res) => {
+    const {email,password} = req.body;
+    try{
+        //find user
+        const user = await User.findOne({email});
+        const isMatch = await User.findOne({password});
+        if(user && isMatch){
+            res.send ("login success");
+        }else{
+            res.send ("login failed");
+        }
+
+    }catch(error){
+        res.send(error);
+    }
+})
+
 app.get('/auth/register',(req, res) => {
    
     res.render ("register");
