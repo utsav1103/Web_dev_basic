@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 require ("dotenv").config();
 const User = require("./models/User");
+const userRoutes = require("./routes/authRoutes");
 
 
 //port
@@ -16,62 +17,9 @@ app.set("view engine", "ejs");
 
 
 //routes
-app.get('/auth/login',(req, res) => {
-    res.render("login");
-});
+app.use('/auth', userRoutes);
 
-//MAIN LOGIC FOR USE LOGIN
-
-app.post("/auth/login", async (req, res) => {
-    const {email,password} = req.body;
-    try{
-        //find user
-        const user = await User.findOne({email});
-        const isMatch = await User.findOne({password});
-        if(user && isMatch){
-            res.send ("login success");
-        }else{
-            res.send ("login failed");
-        }
-
-    }catch(error){
-        res.send(error);
-    }
-})
-
-app.get('/auth/register',(req, res) => {
-   
-    res.render ("register");
-    
-});
-
-app.post('/auth/register', async (req, res) => {
-    const {username, email, password} = req.body;
-    try{
-        //check if user exists
-        const user = await User.findOne({email});
-        if(user){
-            res.send("user already exists");
-        }else{
-            //create new user
-            const newUser = new  User({
-                username,
-                email,
-                password,
-            });
-            await newUser.save();
-            //redirect to login
-            res.redirect("/auth/login");
-        }
-        
-
-    }catch(err){
-        res.send(err);
-        
-    }
-});
-
-//* main logic for user registartion
+//* start server
 
 
 
