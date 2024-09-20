@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Register</h1>
+    <%if(error){%>
+        <div style="background-color: antiquewhite;"><%= error %></div>
+    <%}%>
     <form action="/auth/register" method="POST">
         <input type="text" name="username" placeholder="Username" />
         <input type="email" name="email" placeholder="Email" />
