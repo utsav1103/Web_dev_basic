@@ -1,5 +1,5 @@
 const User = require("../models/User");
-
+const passport = require("passport");
 const bcrypt = require("bcryptjs");
 
 //Render login page 
@@ -8,21 +8,25 @@ exports.getLogin = (req, res) => {
 };
 
 //Login logic
-exports.login = async (req, res) => {
-    const {email,password} = req.body;
-    try{
-        //find user
-        const user = await User.findOne({email});
-        const isMatch = await User.findOne({password});
-        if(user && isMatch){
-            res.send ("login success");
-        }else{
-            res.send ("login failed");
+exports.login = async (req, res, next) => {
+    passport.authenticate("local", (err, user, info)=>{
+        if(err){
+            return next(err);
         }
-
-    }catch(error){
-        res.send(error);
-    }
+        if(!user){
+            return res.render("login", {
+                title: "Login",
+                user: req.username,
+                error: info.message,
+            });
+        }
+        req.logIn(user, (err) => {
+            if(err){
+                return next(err);
+            }
+            return res.redirect("/");
+        });
+    })(req, res, next);
 };
 
 // register render page
