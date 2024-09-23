@@ -4,7 +4,12 @@ const bcrypt = require("bcryptjs");
 
 //Render login page 
 exports.getLogin = (req, res) => {
-    res.render("login");
+    
+    res.render("login",{
+        title: "Login",
+        error: "",
+        user: req.user,
+    });
 };
 
 //Login logic
@@ -16,7 +21,7 @@ exports.login = async (req, res, next) => {
         if(!user){
             return res.render("login", {
                 title: "Login",
-                user: req.username,
+                user: req.user,
                 error: info.message,
             });
         }
@@ -34,7 +39,7 @@ exports.getRegister = (req, res) => {
    
     res.render ("register", {
         title: "Register",
-        user: req.username,
+        user: req.user,
         error: "",
     });
     
@@ -49,7 +54,7 @@ exports.register = async (req, res) => {
         if(existingUser){
             return res.render('register', {
                 title: "Register",
-                user: req.username,
+                user: req.user,
                 error: "user already exists",
             });
         }//hash password
@@ -65,8 +70,18 @@ exports.register = async (req, res) => {
        
         res.render("register", {
             title: "Register",
-            user: req.username,
+            user: req.user,
             error: err.message,
         });
     }
+};
+
+//Logout
+exports.logout = (req, res) => {
+    req.logout((err)=>{
+        if(err){
+            return next(err);
+        }
+        res.redirect("/auth/login");
+    });
 };

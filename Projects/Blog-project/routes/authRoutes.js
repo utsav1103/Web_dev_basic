@@ -2,7 +2,7 @@ const express = require("express");
 const userRoutes = express.Router();
 
 const User = require("../models/User");
-const {getLogin, login ,getRegister, register} = require("../controllers/authController");
+const {getLogin, login ,getRegister, register, logout} = require("../controllers/authController");
 
 userRoutes.get('/login', getLogin);
 
@@ -13,5 +13,9 @@ userRoutes.post("/login", login );
 userRoutes.get('/register', getRegister);
 
 userRoutes.post('/register', register);
+
+//logout
+
+userRoutes.get('/logout', logout);
 
 module.exports = userRoutes;
