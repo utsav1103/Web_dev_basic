@@ -32,7 +32,11 @@ exports.login = async (req, res, next) => {
 // register render page
 exports.getRegister = (req, res) => {
    
-    res.render ("register");
+    res.render ("register", {
+        title: "Register",
+        user: req.username,
+        error: "",
+    });
     
 };
 

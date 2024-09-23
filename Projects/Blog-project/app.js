@@ -19,10 +19,10 @@ app.use(express.urlencoded({extended: true}));
 
 //session middleware
 app.use(session({
-    secret:"keyboar cat",
+    secret:"keyboard cat",
     resave: false,
     saveuninitialized: false, 
-    store: MongoStore.create({})
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_URL}),
 }))
 
 
