@@ -8,6 +8,7 @@ const session = require("express-session");
 const User = require("./models/User");
 const userRoutes = require("./routes/authRoutes");
 const passportConifg = require("./config/passport");
+const postRoutes = require("./routes/postRoutes");
 
 
 //port
@@ -45,7 +46,7 @@ app.get("/", (req, res) => {
 
 //routes
 app.use('/auth', userRoutes);
-
+app.use('/posts', postRoutes);
 //* start server
 
 
