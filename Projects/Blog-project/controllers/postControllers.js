@@ -51,6 +51,7 @@ exports.createPost = async (req, res)=> {
         title: "Create Post",
         user: req.user,
         success: "post created successfully",
+        error: "",
     });
 
 };
