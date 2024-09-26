@@ -57,3 +57,15 @@ exports.createPost = asyncHandler(async (req, res)=> {
     });
 
 });
+
+//Get all posts
+exports.getPosts = asyncHandler(async (req, res) => {
+    const posts = await Post.find().populate("author", "username");
+    res.render("posts", {
+        title: "Posts",
+        posts,
+        user: req.user,
+        success: "",
+        error: "",
+    });
+});

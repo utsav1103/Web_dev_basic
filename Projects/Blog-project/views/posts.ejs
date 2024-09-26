@@ -1,0 +1,19 @@
+<%- include('partials/header', { title, user: user }) %>
+<h1>Posts</h1>
+
+<% if(posts?.length > 0) { %>
+    <% posts.forEach(post = > { %>
+        <div>
+            <h2><%- post.title  %></h2>
+            <% if(post?.images?.length) { %>
+                <img src="<%- post.images[0].url %>" />
+           <% } %>
+            <p><%- post. content  %></p>
+        </div>
+ <%   }) %>
+<% } else { %>
+    <p style="background-color: plum;color: rgb(7, 7, 7);">No posts found</p>
+<% } %>
+
+
+<%- include('partials/footer') %>
