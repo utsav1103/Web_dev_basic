@@ -9,6 +9,7 @@ const User = require("./models/User");
 const userRoutes = require("./routes/authRoutes");
 const passportConifg = require("./config/passport");
 const postRoutes = require("./routes/postRoutes");
+const errorHandler = require("./middlewares/errorHandler");
 
 
 //port
@@ -47,10 +48,13 @@ app.get("/", (req, res) => {
 //routes
 app.use('/auth', userRoutes);
 app.use('/posts', postRoutes);
+
+
+//? error handler middlware call
+app.use(errorHandler);
+
+
 //* start server
-
-
-
 mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log("Database connected successfully");
     
