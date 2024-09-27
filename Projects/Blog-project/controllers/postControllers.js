@@ -196,6 +196,7 @@ exports.deletePost = asyncHandler(async (req, res) => {
       await cloudinary.uploader.destroy(image.public_id);
     })
   );
+  
   await Post.findByIdAndDelete(req.params.id);
   res.redirect("/posts");
 });
