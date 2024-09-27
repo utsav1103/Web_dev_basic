@@ -7,9 +7,11 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const User = require("./models/User");
-const userRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 const passportConifg = require("./config/passport");
+const commentRoutes = require("./routes/commentRoutes");
 const postRoutes = require("./routes/postRoutes");
+const authRoutes = require("./routes/authRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 
 
@@ -50,8 +52,10 @@ app.get("/", (req, res) => {
 });
 
 //routes
-app.use('/auth', userRoutes);
+app.use('/auth', authRoutes);
 app.use('/posts', postRoutes);
+app.use('/', commentRoutes);
+app.use('/user', userRoutes)
 
 
 //? error handler middlware call
