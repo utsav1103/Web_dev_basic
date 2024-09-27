@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
+const methodOverride = require("method-override");
 const session = require("express-session");
 const User = require("./models/User");
 const userRoutes = require("./routes/authRoutes");
@@ -27,6 +28,9 @@ app.use(session({
     store: MongoStore.create({mongoUrl: process.env.MONGODB_URL}),
 }))
 
+// Method override middleware
+
+app.use(methodOverride('_method'));
 
 //passport
 passportConifg(passport);
