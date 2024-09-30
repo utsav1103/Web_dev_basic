@@ -36,6 +36,5 @@ postRoutes.put(
   updatePost
 );
 //delete post
-
 postRoutes.delete("/:id", ensureAuthenticated, deletePost);
 module.exports = postRoutes;

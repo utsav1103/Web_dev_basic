@@ -28,7 +28,7 @@ app.use(session({
     resave: false,
     saveuninitialized: false, 
     store: MongoStore.create({mongoUrl: process.env.MONGODB_URL}),
-}))
+}));
 
 // Method override middleware
 
@@ -72,5 +72,5 @@ mongoose.connect(process.env.MONGODB_URL).then(()=>{
 }).catch(()=>{
     console.log("Database connection failed");
     
-})
+});
 

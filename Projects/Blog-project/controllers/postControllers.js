@@ -17,6 +17,8 @@ exports.getPostForm = asyncHandler((req, res) => {
 exports.createPost = asyncHandler(async (req, res) => {
   const { title, content } = req.body;
   //validation
+  console.log(content,"helllo asfjklfjlkasls");
+  
   if (!req.files || req.files.length === 0) {
     return res.render("newPost", {
       title: "Create Post",
@@ -24,9 +26,16 @@ exports.createPost = asyncHandler(async (req, res) => {
       error: "At least one image is required",
       success: "",
     });
+  }else{
+    console.log("in here");
   }
+  
   const images = await Promise.all(
     req.files.map(async (file) => {
+
+      if(!file.path){
+        throw new Error("File path is missing");
+      }
       //save the images into our database
       const newFile = new File({
         url: file.path,
@@ -196,7 +205,6 @@ exports.deletePost = asyncHandler(async (req, res) => {
       await cloudinary.uploader.destroy(image.public_id);
     })
   );
-  
   await Post.findByIdAndDelete(req.params.id);
   res.redirect("/posts");
 });

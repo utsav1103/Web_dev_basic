@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//Schema
+//schema
 const postSchema = new mongoose.Schema(
   {
     title: {
@@ -11,23 +11,21 @@ const postSchema = new mongoose.Schema(
     content: {
       type: String,
       required: true,
-      
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
-    
     images: [
       {
         url: {
-            type: String,
-            required: true,
+          type: String,
+          required: true,
         },
         public_id: {
-            type: String,
-            required: true,
+          type: String,
+          required: true,
         },
       },
     ],
@@ -38,8 +36,11 @@ const postSchema = new mongoose.Schema(
       },
     ],
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 const Post = mongoose.model("Post", postSchema);
+
 module.exports = Post;
